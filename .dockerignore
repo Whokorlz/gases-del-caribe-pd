@@ -1,0 +1,13 @@
+# Dependency directories
+node_modules
+dist
+logs
+
+# Build artifacts
+npm-debug.log
+.env
+.DS_Store
+
+# Docker files
+docker-compose.yml
+Dockerfile
