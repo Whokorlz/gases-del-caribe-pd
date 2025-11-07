@@ -1,0 +1,32 @@
+
+FROM node:18-alpine as build
+
+WORKDIR /app
+
+# Copia los archivos package.json
+COPY package.json ./
+COPY packages/frontend/package.json ./packages/frontend/
+
+# Instala las dependencias del monorepo
+RUN npm install
+
+# Copia el código de la app
+COPY . .
+
+# Construye la aplicación React (usando 'build' de Vite)
+RUN npm run build --workspace=packages/frontend
+
+# Etapa de ejecución (sirve los archivos estáticos con Nginx para ser ligero)
+FROM nginx:stable-alpine
+
+# Copia la configuración de Nginx (deberías crear un archivo nginx.conf)
+# COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copia los archivos de la app construida
+COPY --from=build /app/packages/frontend/dist /usr/share/nginx/html
+
+# Expone el puerto por defecto de Nginx
+EXPOSE 80
+
+# Comando para iniciar Nginx
+CMD ["nginx", "-g", "daemon off;"]
