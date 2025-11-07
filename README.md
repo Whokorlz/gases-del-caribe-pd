@@ -1,104 +1,124 @@
-# Gases del Caribe - Panel de Control
+# Caribbean Gases - Control Panel
 
-Aplicación web para la gestión de usuarios con autenticación segura y panel de control administrativo.
+Web application for user management with secure authentication and an administrative control panel.
 
-## 🚀 Características Principales
+## 🚀 Main Features
 
-### Autenticación y Seguridad
-- Registro de nuevos usuarios con validación
-- Inicio de sesión seguro con JWT
-- Rutas protegidas
-- Manejo de sesiones
-- Tokens de autenticación seguros
+### Authentication and Security
+- New user registration with validation
+- Secure login with JWT
+- Protected routes
+- Session management
+- Secure authentication tokens
 
 ### Frontend
-- Interfaz moderna con React y TypeScript
-- Diseño responsivo con Material-UI
-- Formularios con validación en tiempo real
-- Manejo de estados con Context API
-- Navegación con React Router
+- Modern interface with React and TypeScript
+- Responsive design with Material UI
+- Forms with real-time validation
+- State management with Context API
+- Navigation with React Router
 
 ### Backend
-- API RESTful con Express y TypeScript
-- Base de datos PostgreSQL con TypeORM
-- Migraciones para el control de esquemas
-- Validación de datos en el servidor
-- Manejo centralizado de errores
+- RESTful API with Express and TypeScript
+- PostgreSQL database with TypeORM
+- Migrations for schema control
+- Server-side data validation
+- Centralized error handling
 
-### Desarrollo
-- Configuración con Docker para desarrollo y producción
-- Variables de entorno para configuración
-- Scripts útiles para desarrollo
-- Documentación detallada
+### Development
+- Docker configuration for development and production
+- Environment variables for configuration
+- Useful scripts for development
+- Detailed documentation
 
-## 🛠️ Requisitos Previos
+## 🛠️ Prerequisites
 
-- Node.js v18 o superior
-- npm v9 o superior
-- Docker y Docker Compose (opcional pero recomendado)
-- PostgreSQL 14 o superior (si no se usa Docker)
+- Node.js v18 or higher
+- npm v9 or higher
+- Docker and Docker Compose (optional but recommended)
+- PostgreSQL 14 or higher (if not using Docker)
 
-## 🚀 Instalación Rápida
+## 🚀 Quick Installation
 
-1. **Clonar el repositorio**
-   ```bash
-   git clone https://github.com/Whokorlz/gases-del-caribe-pd.git
-   cd gases-del-caribe-PD
-   ```
+1. **Clone the repository**
+``bash
 
-2. **Configuración del entorno**
-   ```bash
-   # Copiar archivos de ejemplo de variables de entorno
-   cp packages/backend/.env.example packages/backend/.env
-   cp packages/frontend/.env.example packages/frontend/.env.local
-   ```
-   
-   Editar los archivos `.env` según sea necesario.
+git clone https://github.com/Whokorlz/gases-del-caribe-pd.git
 
-3. **Instalar dependencias**
-   ```bash
-   # Instalar dependencias del backend
-   cd packages/backend
-   npm install
-   
-   # Instalar dependencias del frontend
-   cd ../frontend
-   npm install
-   cd ../..
-   ```
+cd gases-del-caribe-PD
 
-## 🏃 Ejecución con Docker (Recomendado)
+``
+
+2. **Environment configuration**
+``bash
+
+# Copy example environment variable files
+
+cp packages/backend/.env.example
+
+cp packages/frontend/.env.example
+
+``
+
+Edit the `.env` files as needed.
+
+3. **Installing Dependencies**
+```bash
+
+# Install backend dependencies
+
+cd packages/backend
+
+npm install
+
+# Install frontend dependencies
+
+cd ../frontend
+
+npm install
+
+cd ../..
+
+``
+
+## 🏃 Running with Docker (Recommended)
 
 ```bash
-# Construir y levantar todos los servicios
+# Build and start all services
+
 docker-compose up --build
 
-# Ejecutar en segundo plano
+# Run in the background
+
 docker-compose up -d
 
-# Ver logs en tiempo real
+# View logs in real time
+
 docker-compose logs -f
 
-# Detener los servicios
+# Stop services
+
 docker-compose down
 
-# Reconstruir imágenes forzadamente
+# Force rebuild images
+
 docker-compose up --build --force-recreate
 ```
 
-## 🖥️ Ejecución Local
+## 🖥️ Local Run
 
 ### Backend
 ```bash
+
 cd packages/backend
 
-# Instalar dependencias (si no se han instalado)
+# Install dependencies (if they haven't been installed) (installed)
 npm install
 
-# Iniciar en modo desarrollo
+# Start in development mode
 npm run dev
 
-# O para producción
+# Or for production
 npm run build
 npm start
 ```
@@ -107,111 +127,105 @@ npm start
 ```bash
 cd packages/frontend
 
-# Instalar dependencias (si no se han instalado)
+# Install dependencies (if not already installed)
 npm install
 
-# Iniciar servidor de desarrollo
+# Start development server
 npm start
 
-# Construir para producción
+# Build for production
 npm run build
 ```
 
-## 🌐 Acceso
+## 🌐 Access
 
 - **Frontend**: http://localhost:5173
 - **Backend API**: http://localhost:3001/api
-- **Base de datos**: PostgreSQL en localhost:5432
-- **Documentación de la API**: http://localhost:3001/api-docs (en desarrollo)
+- **Database**: PostgreSQL on localhost:5432
+- **API documentation**: http://localhost:3001/api-docs (under development)
 
-## 📊 Estructura del Proyecto
+## 📊 Project Structure
 
 ```
 gases-del-caribe-PD/
 ├── packages/
-│   ├── backend/               # Backend (Node.js + Express + TypeORM)
-│   │   ├── src/
-│   │   │   ├── config/       # Configuraciones
-│   │   │   ├── controllers/  # Controladores
-│   │   │   ├── middlewares/  # Middlewares
-│   │   │   ├── models/       # Modelos de la base de datos
-│   │   │   ├── routes/       # Rutas de la API
-│   │   │   ├── services/     # Lógica de negocio
-│   │   │   ├── app.ts        # Aplicación Express
-│   │   │   └── index.ts      # Punto de entrada
-│   │   └── package.json
-│   │
-│   └── frontend/             # Frontend (React + TypeScript + Material-UI)
-│       ├── public/
-│       └── src/
-│           ├── components/   # Componentes reutilizables
-│           ├── pages/        # Páginas de la aplicación
-│           ├── services/     # Servicios API
-│           ├── styles/       # Estilos globales
-│           ├── App.tsx       # Componente principal
-│           └── index.tsx     # Punto de entrada
+│ ├── backend/ # Backend (Node.js + Express + TypeORM)
+│ │ ├── src/
+│ │ │ ├── config/ # Configurations
+│ │ │ ├── controllers/ # Controllers
+│ │ │ ├── middlewares/ # Middlewares
+│ │ │ ├── models/ # Database Models
+│ │ │ ├── routes/ # API Routes
+│ │ │ ├── services/ # Business Logic
+│ │ │ ├── app.ts # Express Application
+│ │ │ └── index.ts # Entry Point
+│ │ └── package.json
+│ │
+│ └── frontend/ # Frontend (React + TypeScript + Material-UI)
+│ ├── public/
+│ └── src/
+│ ├── components/ # Reusable Components
+│ ├── pages/ # Application Pages
+│ ├── services/ # API Services
+│ ├── styles/ # Global Styles
+│ ├── App.tsx # Main Component
+│ └── index.tsx # Entry Point
 │
-├── docker-compose.yml        # Configuración de Docker Compose
-└── README.md                # Este archivo
+├── docker-compose.yml # Docker Compose Configuration
+└── README.md # This File
 ```
 
-## 🔧 Variables de Entorno
+## 🔧 Environment Variables
 
-Crear un archivo `.env` en `packages/backend/` basado en `.env.example`:
+Create a `.env` file in `packages/backend/` based on `.env.example`:
 
 ```env
-# Base de datos
-POSTGRES_USER=tu_usuario
-POSTGRES_PASSWORD=tu_contraseña
-POSTGRES_DB=nombre_base_datos
+# Database
+POSTGRES_USER=your_username
+POSTGRES_PASSWORD=your_password
+POSTGRES_DB=database_name
 DB_HOST=localhost
 DB_PORT=5432
 
-# Servidor
+# Server
 PORT=3001
 NODE_ENV=development
 
-# Autenticación
-JWT_SECRET=tu_clave_secreta
+# Authentication
+JWT_SECRET=your_secret_key
 JWT_EXPIRES_IN=24h
 ```
 
-## 📝 Documentación de la API
+## 📝 API Documentation
 
-La documentación de la API estará disponible en `http://localhost:3001/api-docs` una vez que el servidor esté en ejecución.
+The API documentation will be available at `http://localhost:3001/api-docs` once the server is running.
 
-## 🧪 Pruebas
+
+## 🧪 Testing
 
 ```bash
-# Ejecutar pruebas del backend
+# Run backend tests
 cd packages/backend
 npm test
 
-# Ejecutar pruebas del frontend
+# Run frontend tests
 cd ../frontend
 npm test
 ```
 
-## 🛡️ Seguridad
+## 🛡️ Security
 
-- Validación de entrada en todos los endpoints
-- Protección contra inyección SQL mediante TypeORM
-- Autenticación basada en JWT
-- CORS configurado para desarrollo/producción
-- Variables sensibles en archivos .env
+- Input validation on all endpoints
+- SQL injection protection using TypeORM
+- JWT-based authentication
+- CORS configured for development/production
+- Sensitive variables in .env files
 
-## 🤝 Contribución
+## 🤝 Contribution
 
-1. Hacer fork del proyecto
-2. Crear una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Hacer commit de tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Hacer push a la rama (`git push origin feature/AmazingFeature`)
-5. Abrir un Pull Request
+1. Fork the project
+2. Create a branch for your feature (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch
 
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
-
----
-
-Desarrollado con ❤️ por [Tu Nombre]
+## Author: Keshia Lambis
