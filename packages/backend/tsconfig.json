@@ -30,11 +30,11 @@
     }
   },
   "include": [
-    "src/**/*",
-    "src/@types/**/*",
-    "__tests__/**/*.ts"
+    "src/**/*"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist",
+    "**/__tests__/**/*"
   ]
 }

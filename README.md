@@ -41,7 +41,8 @@ Web application for user management with secure authentication and an administra
 ## 🚀 Quick Installation
 
 1. **Clone the repository**
-``bash
+
+```bash
 
 git clone https://github.com/Whokorlz/gases-del-caribe-pd.git
 
@@ -50,7 +51,7 @@ cd gases-del-caribe-PD
 ``
 
 2. **Environment configuration**
-``bash
+```bash
 
 # Copy example environment variable files
 

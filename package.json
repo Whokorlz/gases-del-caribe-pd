@@ -3,5 +3,10 @@
     "pg": "^8.16.3",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^0.3.27"
-  }
+  },
+  "scripts": {
+  "start": "node dist/index.js",
+  "build": "tsc",
+  "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
+}
 }
