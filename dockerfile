@@ -8,13 +8,13 @@ WORKDIR /app
 COPY packages/backend/package*.json ./
 
 # Instalar dependencias
-RUN npm install
+RUN npm install -g typescript
 
 # Copiar el resto de los archivos del backend
 COPY packages/backend/ .
 
 # Construir la aplicación
-RUN npm run build
+RUN npm install
 
 # Puerto en el que se ejecutará la aplicación
 EXPOSE 3000
