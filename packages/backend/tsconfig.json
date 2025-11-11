@@ -33,8 +33,6 @@
     "src/**/*"
   ],
   "exclude": [
-    "node_modules",
-    "dist",
-    "**/__tests__/**/*"
+    "node_modules", "dist"
   ]
 }

@@ -1,10 +1,25 @@
-import app from "./app";
-import dotenv from "dotenv";
+import app from './app';
+import { sequelize } from './config/database';
 
-dotenv.config();
+const PORT = process.env.PORT || 3000;
 
-const PORT = process.env.PORT || 3001;
+const startServer = async () => {
+  try {
+    // Sincronizar modelos con la base de datos
+    await sequelize.authenticate();
+    console.log('Conexión a la base de datos establecida correctamente.');
+    
+    await sequelize.sync({ alter: true });
+    console.log('Modelos sincronizados con la base de datos.');
 
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
+    // Iniciar servidor
+    app.listen(PORT, () => {
+      console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    });
+  } catch (error) {
+    console.error('Error al iniciar el servidor:', error);
+    process.exit(1);
+  }
+};
+
+startServer();

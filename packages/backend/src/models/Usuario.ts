@@ -1,7 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import { Sesion } from './Sesion';
 
-type Rol = 'usuario' | 'administrador';
 
 @Entity('usuarios')
 export class Usuario {
@@ -20,12 +19,6 @@ export class Usuario {
   @Column({ type: 'boolean', default: true })
   activo!: boolean;
 
-  @Column({ 
-    type: 'enum', 
-    enum: ['usuario', 'administrador'],
-    default: 'usuario' 
-  })
-  rol!: Rol;
 
   @CreateDateColumn({ type: 'timestamp', name: 'fecha_creacion' })
   fechaCreacion!: Date;
